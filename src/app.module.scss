@@ -1,0 +1,131 @@
+body {
+  background: #f9f9f9;
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .wrapperBasket {
+      font-family: Nunito;
+      width: 300px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px;
+      .wrapperItems {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        h1 {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 24px;
+        }
+        span {
+          padding: 5px 20px;
+          background: #f2f2f3;
+          border-radius: 6px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16.37px;
+        }
+      }
+      hr {
+        margin-top: 15px;
+        border-style: solid;
+        border-color: #f2f2f3;
+        margin-bottom: 15px;
+      }
+      .wrapperBuy {
+        display: flex;
+        justify-content: space-between;
+        img {
+          width: 64px;
+          height: 52px;
+        }
+        h2 {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 16.37px;
+        }
+        p {
+          color: #b1b1b1;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16.37px;
+        }
+        .countCheese {
+          display: flex;
+          justify-content: space-between;
+          width: 84px;
+          align-items: center;
+          padding: 5px 20px;
+          background: #f2f2f3;
+          border-radius: 12px;
+          span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21.82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          button {
+            cursor: pointer;
+            background-color: inherit;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21.82px;
+            &:first-child {
+              color: red;
+            }
+            &:last-child {
+              color: limegreen;
+            }
+          }
+        }
+      }
+      .sumWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        h3 {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20.8px;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20.8px;
+        }
+      }
+      .getcall {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        button {
+          cursor: pointer;
+          width: 268px;
+          background: #ff7020;
+          padding: 11px 32px;
+          border: none;
+          border-radius: 12px;
+          color: white;
+        }
+      }
+      .freeget {
+        display: flex;
+        align-items: center;
+        p {
+          padding-left: 10px;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 16.37px;
+        }
+      }
+    }
+  }
+}
