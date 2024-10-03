@@ -1,0 +1,130 @@
+.header {
+  height: 620px;
+  width: 100%;
+  background-image: url(../assets/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 25px;
+  .wrapperLogo {
+    margin-bottom: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 665px) {
+      margin-bottom: 10px;
+    }
+    img {
+      &:first-child {
+        height: 18px;
+      }
+    }
+  }
+  .wrapperBurgeradd {
+    font-family: Nunito;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 830px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 661px) {
+      text-align: center;
+    }
+    h1 {
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 60px;
+      color: #ffffff;
+      @media (max-width: 470px) {
+        font-size: 40px;
+      }
+    }
+    h2 {
+      color: #ff5c00;
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 60px;
+      margin-bottom: 50px;
+      @media (max-width: 470px) {
+        font-size: 40px;
+      }
+    }
+    p {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 21.82px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 11px 92px;
+      border-radius: 12px;
+      background-color: #f2f2f3;
+      border: none;
+    }
+    .wrapInfo {
+      padding: 25px;
+      @media (max-width: 830px) {
+        padding: 10px;
+      }
+    }
+    img {
+      padding: 25px;
+      @media (max-width: 830px) {
+        padding: 10px;
+        width: 246px;
+        height: 246px;
+      }
+      @media (max-width: 500px) {
+        padding: 10px;
+        width: 186px;
+        height: 186px;
+      }
+    }
+  }
+}
+.wrapperChoose {
+  display: flex;
+  overflow-x: auto;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 10px;
+  @media (max-width: 1080px) {
+    width: 96%;
+  }
+  @media (max-width: 1005px) {
+    margin-bottom: 0px;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 50px;
+    margin: 10px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 21.82px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    min-width: 120px;
+    @media (max-width: 1580px) {
+      font-size: 16px;
+      line-height: 21.82px;
+    }
+    &:first-child {
+      background-color: #ffab08;
+    }
+    &:hover {
+      background-color: #f0e68c;
+    }
+    img {
+      padding-right: 10px;
+    }
+  }
+}

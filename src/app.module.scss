@@ -1,10 +1,6 @@
 body {
   background: #f9f9f9;
   .background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     .wrapperBasket {
       font-family: Nunito;
       width: 300px;
@@ -17,7 +13,7 @@ body {
         align-items: center;
         margin-bottom: 15px;
         h1 {
-          font-size: 24px;
+          font-size: 30px;
           font-weight: 600;
           line-height: 24px;
         }
@@ -127,5 +123,16 @@ body {
         }
       }
     }
+  }
+}
+.scrollToggle{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  button{
+    border: none;
+    font-size: 25px;
+    background-color: #ffffff;
+    cursor: pointer;
   }
 }

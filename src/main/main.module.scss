@@ -1,0 +1,92 @@
+.main {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: Nunito;
+  margin-bottom: 50px;
+  @media (max-width: 1080px) {
+    width: 96%;
+  }
+  @media (max-width: 1005px) {
+    flex-wrap: wrap;
+  }
+  .wrapperBasket {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    .spanDown {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+      padding: 0px 0px 25px 25px;
+      @media (max-width: 1005px) {
+        padding: 0px 0px 10px 10px;
+      }
+    }
+  }
+  .wrapperChoose {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+      padding: 0px 0px 25px 25px;
+    }
+    .wrapperCardItem {
+      display: flex;
+      flex-wrap: wrap;
+      @media (max-width: 1005px) {
+        justify-content: center;
+      }
+      .cardItem {
+        width: 300px;
+        background-color: #ffffff;
+        border-radius: 18px;
+        margin: 0px 0px 25px 25px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 1005px) {
+          margin: 0px 0px 10px 10px;
+        }
+        @media (max-width: 660px) {
+          width: 100%;
+        }
+        img {
+          margin-bottom: 10px;
+        }
+        h2 {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 24px;
+          margin-bottom: 10px;
+        }
+        p {
+          margin-bottom: 25px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20.8px;
+        }
+        span {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20.8px;
+          color: #b1b1b1;
+          margin-bottom: 10px;
+        }
+        button {
+          cursor: pointer;
+          background-color: #f2f2f3;
+          border-radius: 12px;
+          border: none;
+          padding: 11px 92px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

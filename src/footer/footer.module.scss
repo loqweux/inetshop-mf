@@ -1,0 +1,101 @@
+.footer {
+  background-color: #ffffff;
+  font-family: Nunito;
+  padding: 50px 0px;
+  .wrapperInfo {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    @media (max-width: 1080px) {
+      width: 96%;
+    }
+    @media (max-width: 780px) {
+      width: 100%;
+      padding: 10px;
+    }
+    @media (max-width: 730px) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    .logoInfo {
+      display: flex;
+      align-items: center;
+      @media (max-width: 730px) {
+        margin-bottom: 20px;
+      }
+    }
+    .numberInfo {
+      padding-left: 100px;
+      @media (max-width: 935px) {
+        padding-left: 30px;
+      }
+      @media (max-width: 780px) {
+        padding-left: 10px;
+      }
+      p {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 20px;
+
+        @media (max-width: 405px) {
+          font-size: 20px;
+        }
+      }
+      .wrapperCall {
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20.8px;
+        }
+      }
+    }
+    .wrapperInformation {
+      display: flex;
+      @media (max-width: 730px) {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+    .socialInfo {
+      padding-left: 100px;
+      @media (max-width: 935px) {
+        padding-left: 30px;
+      }
+      p {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 20px;
+        @media (max-width: 405px) {
+          font-size: 20px;
+        }
+      }
+      .wrapperSocial {
+        width: 88px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  .wrapperEnd {
+    width: 90%;
+    margin: 0 auto;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.37px;
+    }
+  }
+}
+.noInfo {
+  display: block;
+  @media (max-width: 780px) {
+    display: none;
+  }
+}
