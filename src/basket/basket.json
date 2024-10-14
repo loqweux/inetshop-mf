@@ -4,20 +4,20 @@
     "name": "Супер сырный",
     "weight": "512г",
     "price": 550,
-    "image": "./assets/Cheese.png"
+    "image": "../../public/basket_img/Cheese.png"
   },
   {
     "id": "free",
     "name": "Картошка фри",
     "weight": "180г",
     "price": 245,
-    "image": "./assets/Free.png"
+    "image": "../../public/basket_img/Free.png"
   },
   {
     "id": "hotdog",
     "name": "Жгучий хот-дог",
     "weight": "245г",
     "price": 239,
-    "image": "./assets/Hot-dog.png"
+    "image": "../../public/basket_img/Hot-dog.png"
   }
 ]

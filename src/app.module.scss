@@ -7,6 +7,9 @@ body {
       background: #ffffff;
       border-radius: 18px;
       padding: 20px;
+      @media (max-width: 1005px) {
+        width: 100%;
+      }
       .wrapperItems {
         display: flex;
         justify-content: space-between;
@@ -125,14 +128,16 @@ body {
     }
   }
 }
-.scrollToggle{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  button{
-    border: none;
-    font-size: 25px;
-    background-color: #ffffff;
-    cursor: pointer;
-  }
+.wrapperBasket {
+  cursor: pointer;
+}
+
+.itemsContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.itemsContainer.open {
+  max-height: 1000px;
 }
