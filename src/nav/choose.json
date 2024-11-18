@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "image": "./head_img/Burgers.png",
+    "label": "Бургеры",
+    "name_product": "burgers"
+  },
+  {
+    "id": 2,
+    "image": "./head_img/Zakusk.png",
+    "label": "Закуски",
+    "name_product": "snacks"
+  },
+  {
+    "id": 3,
+    "image": "./head_img/Hot-dogs.png",
+    "label": "Хот-доги",
+    "name_product": "hot-dogs"
+  },
+  {
+    "id": 4,
+    "image": "./head_img/Combo.png",
+    "label": "Комбо",
+    "name_product": "combo"
+  },
+  {
+    "id": 5,
+    "image": "./head_img/Shayrma.png",
+    "label": "Шаурма",
+    "name_product": "shawerma"
+  },
+  {
+    "id": 6,
+    "image": "./head_img/pizza.png",
+    "label": "Пицца",
+    "name_product": "pizza"
+  },
+  {
+    "id": 7,
+    "image": "./head_img/Bok.png",
+    "label": "Вок",
+    "name_product": "wok"
+  },
+  {
+    "id": 8,
+    "image": "./head_img/Decerts.png",
+    "label": "Десерты",
+    "name_product": "desserts"
+  },
+  {
+    "id": 9,
+    "image": "./head_img/Souses.png",
+    "label": "Соусы",
+    "name_product": "sauce"
+  }
+]

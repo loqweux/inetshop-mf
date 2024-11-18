@@ -1,62 +1,74 @@
 import { useState } from "react";
 import FreeDelivery from "../assets/freegot.png";
 import styles from "../app.module.scss";
-import data from "./basket.json";
+import {
+  removeProductItemFromBasket,
+  editProductItemBasket,
+} from "../services/FB";
+import Modal from "../modal/OrderModal";
 
-function Basket() {
-  let initialWindowWidth;
-  if (typeof window !== "undefined") {
-    initialWindowWidth = window.innerWidth;
-  } else {
-    initialWindowWidth = 1024;
-  }
-
+function Basket({ cartItems, setCartItems }) {
+  const initialWindowWidth =
+    typeof window !== "undefined" ? window.innerWidth : 1024;
   const [windowWidth] = useState(initialWindowWidth);
-  const [cheeseCount, setCheeseCount] = useState(1);
-  const [freeCount, setFreeCount] = useState(2);
-  const [hotdogCount, setHotdogCount] = useState(1);
   const [showItems, setShowItems] = useState(initialWindowWidth > 1005);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleItems = () => setShowItems((prev) => !prev);
-
-  const increaseCheese = (e) => {
+  const closeBasket = (e) => {
     e.stopPropagation();
-    setCheeseCount(cheeseCount + 1);
+    setShowItems(false);
   };
 
-  const decreaseCheese = (e) => {
+  const toggleItems = (e) => {
     e.stopPropagation();
-    if (cheeseCount > 0) {
-      setCheeseCount(cheeseCount - 1);
+    setShowItems((prev) => !prev);
+  };
+
+  const updateItemCount = async (id, delta) => {
+    setCartItems((prevItems) => {
+      const newItems = prevItems
+        .map((item) => {
+          if (item.id === id) {
+            const newCount = item.count + delta;
+            return { ...item, count: Math.max(newCount, 0) };
+          }
+          return item;
+        })
+        .filter((item) => item.count > 0);
+
+      return newItems;
+    });
+
+    const itemToUpdate = cartItems.find((item) => item.id === id);
+    if (itemToUpdate) {
+      const newCount = itemToUpdate.count + delta;
+      if (newCount > 0) {
+        await editProductItemBasket({ ...itemToUpdate, count: newCount }, id);
+      } else {
+        await removeProductItemFromBasket(id);
+      }
     }
   };
 
-  const increaseFree = (e) => {
-    e.stopPropagation();
-    setFreeCount(freeCount + 1);
-  };
+  const totalPrice = Array.isArray(cartItems)
+    ? cartItems.reduce((total, item) => total + item.price * item.count, 0)
+    : 0;
 
-  const decreaseFree = (e) => {
-    e.stopPropagation();
-    if (freeCount > 0) {
-      setFreeCount(freeCount - 1);
-    }
-  };
+  const itemCount = Array.isArray(cartItems)
+    ? cartItems.reduce((total, item) => total + item.count, 0)
+    : 0;
 
-  const increaseHotdog = (e) => {
-    e.stopPropagation();
-    setHotdogCount(hotdogCount + 1);
+  const maxImages = {
+    burgers: 6,
+    snacks: 5,
+    "hot-dogs": 5,
+    pizza: 5,
+    shawerma: 5,
+    wok: 5,
+    combo: 5,
+    desserts: 5,
+    sauce: 5,
   };
-
-  const decreaseHotdog = (e) => {
-    e.stopPropagation();
-    if (hotdogCount > 0) {
-      setHotdogCount(hotdogCount - 1);
-    }
-  };
-
-  const totalPrice = cheeseCount * 550 + freeCount * 245 + hotdogCount * 239;
-  const itemCount = cheeseCount + freeCount + hotdogCount;
 
   const renderBasketItems = () => {
     if (itemCount === 0) {
@@ -65,93 +77,88 @@ function Basket() {
           <h2>Тут пока пусто :(</h2>
         </div>
       );
-    } else {
-      let containerClass = styles.itemsContainer;
-
-      if (showItems) {
-        containerClass = styles.itemsContainerOpen;
-      }
-
-      return (
-        <div className={containerClass}>
-          {data.map((item) => {
-            let count = 0;
-            let increase = () => {};
-            let decrease = () => {};
-
-            if (item.id === "cheese") {
-              count = cheeseCount;
-              increase = increaseCheese;
-              decrease = decreaseCheese;
-            } else if (item.id === "free") {
-              count = freeCount;
-              increase = increaseFree;
-              decrease = decreaseFree;
-            } else if (item.id === "hotdog") {
-              count = hotdogCount;
-              increase = increaseHotdog;
-              decrease = decreaseHotdog;
-            }
-
-            if (count === 0) {
-              return null;
-            } else {
-              return (
-                <div key={item.id}>
-                  <div className={styles.wrapperBuy}>
-                    <img src={item.image} alt={item.name} />
-                    <div className={styles.infoCheese}>
-                      <h2>{item.name}</h2>
-                      <p>{item.weight}</p>
-                      <h2>{item.price}₽</h2>
-                    </div>
-                    <div className={styles.countCheese}>
-                      <button onClick={decrease}>-</button>
-                      <span>{count}</span>
-                      <button onClick={increase}>+</button>
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-              );
-            }
-          })}
-        </div>
-      );
     }
+
+    let containerClass = showItems
+      ? styles.itemsContainerOpen
+      : styles.itemsContainer;
+
+    return (
+      <div className={containerClass} onClick={(e) => e.stopPropagation()}>
+        {cartItems.map((item, productIndex) => {
+          const index = productIndex % maxImages[item.name_product];
+          const imagePath = `/products/${item.name_product}/${item.name_product}_${index}.png`;
+          return (
+            <div key={`${item.id}-${item.count}`}>
+              <div className={styles.wrapperBuy}>
+                <div className={styles.infoCheese}>
+                  <img src={imagePath} alt={item.name} />
+                  <div className={styles.desc}>
+                    <h2>{item.name}</h2>
+                    <p>{item.weight}</p>
+                    <h2>{item.price}₽</h2>
+                  </div>
+                </div>
+                <div className={styles.countCheese}>
+                  <button onClick={() => updateItemCount(item.id, -1)}>
+                    -
+                  </button>
+                  <span>{item.count}</span>
+                  <button onClick={() => updateItemCount(item.id, 1)}>+</button>
+                </div>
+              </div>
+              <hr />
+            </div>
+          );
+        })}
+      </div>
+    );
   };
 
   return (
-    <>
-      <div className={styles.background}>
-        <div className={styles.wrapperBasket} onClick={toggleItems}>
-          <div className={styles.wrapperItems}>
-            <h1>Корзина</h1>
-            <span>{itemCount}</span>
-          </div>
+    <div className={styles.background} onClick={closeBasket}>
+      <div className={styles.wrapperBasket} onClick={toggleItems}>
+        <div className={styles.wrapperItems}>
+          <h1>Корзина</h1>
+          <span>{itemCount}</span>
+        </div>
 
-          {windowWidth > 1005 && <hr />}
+        {windowWidth > 1005 && <hr />}
+        {renderBasketItems()}
 
-          {renderBasketItems()}
-
-          {itemCount > 0 && showItems && (
-            <div>
-              <div className={styles.sumWrap}>
-                <h3>Итого</h3>
-                <p>{totalPrice}₽</p>
-              </div>
-              <div className={styles.getcall}>
-                <button>Оформить заказ</button>
-              </div>
+        {itemCount > 0 && showItems && (
+          <div>
+            <div className={styles.sumWrap}>
+              <h3>Итого</h3>
+              <p>{totalPrice}₽</p>
+            </div>
+            <div className={styles.getcall}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsModalOpen(true);
+                }}
+              >
+                Оформить заказ
+              </button>
+            </div>
+            {totalPrice > 1000 && (
               <div className={styles.freeget}>
                 <img src={FreeDelivery} alt="free_delivery" />
                 <p>Бесплатная доставка</p>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
-    </>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cartItems={cartItems}
+        totalPrice={totalPrice}
+        itemCount={itemCount}
+      />
+    </div>
   );
 }
 

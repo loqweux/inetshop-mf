@@ -1,0 +1,353 @@
+{
+  "burgers": [
+    {
+      "name": "Мясная бомба",
+      "price": 689,
+      "weight": "520г",
+      "name_product": "burgers",
+      "id": "13d4"
+    },
+    {
+      "id": "412b",
+      "name": "Супер сырный",
+      "price": 550,
+      "weight": "512г",
+      "name_product": "burgers",
+      "id": "15f7"
+    },
+    {
+      "name": "Сытный",
+      "price": 639,
+      "weight": "580г",
+      "name_product": "burgers",
+      "id": "434a"
+    },
+    {
+      "name": "Тяжелый удар",
+      "price": 480,
+      "weight": "470г",
+      "name_product": "burgers",
+      "id": "7f43"
+    },
+    {
+      "name": "Вечная классика",
+      "price": 450,
+      "weight": "450г",
+      "name_product": "burgers",
+      "id": "1f2d"
+    },
+    {
+      "name": "Итальянский",
+      "price": 560,
+      "weight": "510г",
+      "name_product": "burgers",
+      "id": "22fh"
+    }
+  ],
+  "snacks": [
+    {
+      "name": "Начос",
+      "price": 250,
+      "weight": "220г",
+      "name_product": "snacks",
+      "id": "e287"
+    },
+    {
+      "name": "Картошка фри",
+      "price": 245,
+      "weight": "180г",
+      "name_product": "snacks",
+      "id": "693a"
+    },
+    {
+      "name": "Луковые кольца",
+      "price": 230,
+      "weight": "160г",
+      "name_product": "snacks",
+      "id": "598b"
+    },
+    {
+      "name": "Креветки",
+      "price": 240,
+      "weight": "180г",
+      "name_product": "snacks",
+      "id": "5f29"
+    },
+    {
+      "name": "Френч Фрайз",
+      "price": 230,
+      "weight": "230г",
+      "name_product": "snacks",
+      "id": "e935"
+    }
+  ],
+  "hot-dogs": [
+    {
+      "name": "Домашний хот-дог",
+      "price": 290,
+      "weight": "250г",
+      "name_product": "hot-dogs",
+      "id": "7a3f"
+    },
+    {
+      "name": "Жгучий хот-дог",
+      "price": 239,
+      "weight": "245г",
+      "name_product": "hot-dogs",
+      "id": "139d"
+    },
+    {
+      "name": "Классический хот-дог",
+      "price": 220,
+      "weight": "215г",
+      "name_product": "hot-dogs",
+      "id": "75dc"
+    },
+    {
+      "name": "Гриль-дог",
+      "price": 249,
+      "weight": "220г",
+      "name_product": "hot-dogs",
+      "id": "a519"
+    },
+    {
+      "name": "Френч-дог",
+      "price": 234,
+      "weight": "230г",
+      "name_product": "hot-dogs",
+      "id": "3c91"
+    }
+  ],
+  "combo": [
+    {
+      "name": "Кантри Ланч Комбо",
+      "price": 629,
+      "weight": "550г",
+      "name_product": "combo",
+      "id": "eb0e"
+    },
+    {
+      "name": "Чикен Ланч Комбо",
+      "price": 599,
+      "weight": "510г",
+      "name_product": "combo",
+      "id": "8ef5"
+    },
+    {
+      "name": "Биф Ланч Комбо",
+      "price": 619,
+      "weight": "540г",
+      "name_product": "combo",
+      "id": "863b"
+    },
+    {
+      "name": "Чикен Сет",
+      "price": 929,
+      "weight": "884г",
+      "name_product": "combo",
+      "id": "ba18"
+    },
+    {
+      "name": "Гранд чизбургер Сет",
+      "price": 799,
+      "weight": "709г",
+      "name_product": "combo",
+      "id": "39b9"
+    }
+  ],
+  "shawerma": [
+    {
+      "name": "Шаурма с курицей",
+      "price": 399,
+      "weight": "400г",
+      "name_product": "shawerma",
+      "id": "f33b"
+    },
+    {
+      "name": "Шаурма с курицей и сыром",
+      "price": 429,
+      "weight": "420г",
+      "name_product": "shawerma",
+      "id": "c368"
+    },
+    {
+      "name": "Шаурма с курицей(острая)",
+      "price": 429,
+      "weight": "410г",
+      "name_product": "shawerma",
+      "id": "edfc"
+    },
+    {
+      "name": "Шаурма с грибами",
+      "price": 379,
+      "weight": "400г",
+      "name_product": "shawerma",
+      "id": "1e34"
+    },
+    {
+      "name": "Шаурма XXL",
+      "price": 519,
+      "weight": "600г",
+      "name_product": "shawerma",
+      "id": "139f"
+    }
+  ],
+  "pizza": [
+    {
+      "name": "4 сезона",
+      "price": 1099,
+      "weight": "610г",
+      "name_product": "pizza",
+      "id": "97ac"
+    },
+    {
+      "name": "Пепперони Делюкс 100",
+      "price": 1299,
+      "weight": "660г",
+      "name_product": "pizza",
+      "id": "763d"
+    },
+    {
+      "name": "Ветчина и Грибы",
+      "price": 899,
+      "weight": "595г",
+      "name_product": "pizza",
+      "id": "1f01"
+    },
+    {
+      "name": "Охотничья",
+      "price": 799,
+      "weight": "545г",
+      "name_product": "pizza",
+      "id": "21fc"
+    },
+    {
+      "name": "Маргарита",
+      "price": 859,
+      "weight": "565г",
+      "name_product": "pizza",
+      "id": "7b0f"
+    }
+  ],
+  "wok": [
+    {
+      "name": "Курица в соусе терияки с лапшой удон",
+      "price": 499,
+      "weight": "300г",
+      "name_product": "wok",
+      "id": "7916"
+    },
+    {
+      "name": "Говядина в перечном соусе с лапшой удон",
+      "price": 549,
+      "weight": "300г",
+      "name_product": "wok",
+      "id": "b3e6"
+    },
+    {
+      "name": "Свинина в кисло-сладком соусе с лапшой удон",
+      "price": 529,
+      "weight": "300г",
+      "name_product": "wok",
+      "id": "8dd4"
+    },
+    {
+      "name": "Утка в соусе по-пекински со стеклянной лапшой",
+      "price": 569,
+      "weight": "300г",
+      "name_product": "wok",
+      "id": "937b"
+    },
+    {
+      "name": "Креветки в устричном соусе с лапшой соба",
+      "price": 599,
+      "weight": "300г",
+      "name_product": "wok",
+      "id": "032f"
+    }
+  ],
+  "desserts": [
+    {
+      "name": "Торт «Медовик домашний»",
+      "price": 299,
+      "weight": "100г",
+      "name_product": "desserts",
+      "id": "43c1"
+    },
+    {
+      "name": "Красный бархат",
+      "price": 399,
+      "weight": "100г",
+      "name_product": "desserts",
+      "id": "51ee"
+    },
+    {
+      "name": "Муссовый торт «Три шоколада»",
+      "price": 499,
+      "weight": "100г",
+      "name_product": "desserts",
+      "id": "9b59"
+    },
+    {
+      "name": "Зефир в шоколаде",
+      "price": 99,
+      "weight": "10г",
+      "name_product": "desserts",
+      "id": "6935"
+    },
+    {
+      "name": "Конфеты",
+      "price": 59,
+      "weight": "5г",
+      "name_product": "desserts",
+      "id": "88ba"
+    }
+  ],
+  "sauce": [
+    {
+      "name": "Соус сырный",
+      "price": 99,
+      "weight": "30г",
+      "name_product": "sauce",
+      "id": "5e63"
+    },
+    {
+      "name": "Кетчуп",
+      "price": 99,
+      "weight": "30г",
+      "name_product": "sauce",
+      "id": "d0ad"
+    },
+    {
+      "name": "Соус барбекю",
+      "price": 99,
+      "weight": "30г",
+      "name_product": "sauce",
+      "id": "b53c"
+    },
+    {
+      "name": "Соус чесночный",
+      "price": 99,
+      "weight": "30г",
+      "name_product": "sauce",
+      "id": "1f5c"
+    },
+    {
+      "name": "Горчичный соус",
+      "price": 99,
+      "weight": "30г",
+      "name_product": "sauce",
+      "id": "8f20"
+    }
+  ],
+  "cart": [
+    {
+      "id": "sitniy",
+      "name": "Сытный",
+      "price": 639,
+      "weight": "580г",
+      "name_product": "burgers",
+      "count": 1
+    }
+  ]
+}

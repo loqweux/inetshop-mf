@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 import burger from "../assets/head_burger.png";
+import { loginUser } from "../services/FB";
 import "./Login.scss";
 
 function Login({ setHidden }) {
@@ -16,7 +17,7 @@ function Login({ setHidden }) {
   const { register, handleSubmit } = useForm();
   const [errors, setErrors] = useState({});
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const newErrors = {};
 
     if (!data.email) {
@@ -30,9 +31,12 @@ function Login({ setHidden }) {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      console.log(data);
-      setErrors({});
-      navigate("/main");
+      try {
+        await loginUser(data.email, data.password);
+        navigate("/");
+      } catch (error) {
+        setErrors({ global: "Ошибка входа. Проверьте данные." });
+      }
     }
   };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 import burger from "../assets/head_burger.png";
+import { registerUser } from "../services/FB";
 import "./Register.scss";
 
 function Register({ setHidden }) {
@@ -17,7 +18,7 @@ function Register({ setHidden }) {
   const { register, handleSubmit } = useForm();
   const [errors, setErrors] = useState({});
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const newErrors = {};
 
     if (!data.email) {
@@ -35,8 +36,12 @@ function Register({ setHidden }) {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      setErrors({});
-      navigate("/main");
+      try {
+        await registerUser(data.email, data.password);
+        navigate("/");
+      } catch (error) {
+        setErrors({ global: "Ошибка регистрации. Попробуйте снова." });
+      }
     }
   };
 

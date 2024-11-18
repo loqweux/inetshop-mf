@@ -25,7 +25,7 @@ function Error({ setHidden }) {
             <h1>Извините, но</h1>
             <h2>страничка не найдена!</h2>
             <p>Обратитесь в тех.поддержку, если это ошибка</p>
-            <NavLink to="/main">Вернуться</NavLink>
+            <NavLink to="/">Вернуться</NavLink>
           </div>
         </div>
       </header>
