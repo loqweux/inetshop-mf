@@ -35,13 +35,14 @@ function Register({ setHidden }) {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
-      try {
-        await registerUser(data.email, data.password);
-        navigate("/");
-      } catch (error) {
-        setErrors({ global: "Ошибка регистрации. Попробуйте снова." });
-      }
+      return;
+    }
+    try {
+      const userCredential = await registerUser(data.email, data.password);
+      localStorage.setItem("user", JSON.stringify(userCredential.user));
+      navigate("/");
+    } catch (error) {
+      setErrors({ global: "Ошибка регистрации. Попробуйте снова." });
     }
   };
 

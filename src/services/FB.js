@@ -29,8 +29,10 @@ export async function registerUser(email, password) {
     );
     const userId = userCredential.user.uid;
     await set(ref(database, `users/${userId}`), { email, password });
+    return userCredential;
   } catch (error) {
     console.error("Ошибка во время регистрации:", error.code, error.message);
+    throw error;
   }
 }
 
@@ -71,11 +73,6 @@ export function editProductItemBasket(item, id) {
 export function removeProductItemFromBasket(id) {
   const itemRef = ref(database, `/cart/${id}`);
   return remove(itemRef);
-}
-
-export function updateCart(item) {
-  const dataRef = ref(database, "/cart");
-  return push(dataRef, item);
 }
 
 export function updateItemCart(item, key) {

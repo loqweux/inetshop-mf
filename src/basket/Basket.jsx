@@ -89,7 +89,7 @@ function Basket({ cartItems, setCartItems }) {
           const index = productIndex % maxImages[item.name_product];
           const imagePath = `/products/${item.name_product}/${item.name_product}_${index}.png`;
           return (
-            <div key={`${item.id}-${item.count}`}>
+            <div key={`${item.id}-${item.count}-${productIndex}`}>
               <div className={styles.wrapperBuy}>
                 <div className={styles.infoCheese}>
                   <img src={imagePath} alt={item.name} />

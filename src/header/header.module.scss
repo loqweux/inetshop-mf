@@ -59,10 +59,12 @@
       margin-bottom: 15px;
     }
     button {
+      cursor: pointer;
       padding: 11px 92px;
       border-radius: 12px;
       background-color: #f2f2f3;
       border: none;
+      transition: 1s;
     }
     .wrapInfo {
       padding: 25px;

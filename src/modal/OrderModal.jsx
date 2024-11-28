@@ -17,7 +17,6 @@ const OrderModal = ({ isOpen, onClose, cartItems, totalPrice, itemCount }) => {
   };
 
   const deliveryCharge = totalPrice > 1000 ? 0 : 199;
-  const finalTotalPrice = totalPrice + deliveryCharge;
   return (
     <div className={styles.modalBackground} onClick={closeModal}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>

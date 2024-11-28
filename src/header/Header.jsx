@@ -4,7 +4,7 @@ import kitchen from "../assets/kitchen.png";
 import head_burger from "../assets/head_burger.png";
 import styles from "./header.module.scss";
 
-export default function Header() {
+export default function Header({ onLogout }) {
   return (
     <>
       <header className={styles.header}>
@@ -18,7 +18,7 @@ export default function Header() {
             <h1>Только самые</h1>
             <h2>сочные бургеры!</h2>
             <p>Бесплатная доставка от 999₽</p>
-            <button>Добавить</button>
+            <button onClick={onLogout}>Выйти</button>
           </div>
         </div>
       </header>
